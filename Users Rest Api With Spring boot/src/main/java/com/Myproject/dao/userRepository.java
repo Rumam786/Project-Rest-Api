@@ -1,6 +1,5 @@
 package com.Myproject.dao;
 
-import com.Myproject.Controllers.User;
 import com.Myproject.Entities.Users;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

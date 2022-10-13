@@ -37,7 +37,12 @@ public class UserService {
 
 //    Update Users
 public Users updateuser(int userid, Users users) {
-        users.setUserid(userid);
+        Optional<Users> usersOptional = userRepository.findById(userid);
+        if (usersOptional.isPresent())
+            users.setUserid(userid);
+        else {
+            throw new UserNotFoundException("User Record is Not Available.......");
+        }
     return userRepository.save(users);
 }
 
